@@ -13,6 +13,8 @@ module Formish
     autoload :FormBuilder
   end
 
+  ## Setup Formish
+
   @@configured = false
 
   # Check if Formish is configured
@@ -24,6 +26,14 @@ module Formish
   def self.setup
     @@configured = true
     yield self
+  end
+
+  ## FRAMEWORK SETUP
+
+  @@framework = :none
+
+  def self.framework framework
+    @@framework = framework
   end
 
   ## CONFIGURATION OPTIONS
