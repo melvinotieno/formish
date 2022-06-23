@@ -7,6 +7,8 @@ require "formish/action_view_extensions/form"
 module Formish
   extend ActiveSupport::Autoload
 
+  autoload :Components
+
   eager_autoload do
     autoload :FormBuilder
   end
