@@ -1,12 +1,8 @@
+# frozen_string_literal: true
+
 module Formish
   class Railtie < ::Rails::Railtie
     config.eager_load_namespaces << Formish
-
-    initializer 'formish.initialize' do
-      ActiveSupport.on_load(:action_view) do
-        include Formish::Components::Form
-      end
-    end
 
     config.after_initialize do
       unless Formish.configured?
