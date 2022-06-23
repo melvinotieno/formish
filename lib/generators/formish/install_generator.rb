@@ -3,11 +3,13 @@
 module Formish
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      desc 'Copies Formish initializer to config/initializers'
-
       source_root File.expand_path('../templates', __FILE__)
 
-      class_option :bootstrap, type: :boolean, desc: 'Add Bootstrap to Formish'
+      class_option :bootstrap, type: :boolean, desc: 'Use Bootstrap with Formish'
+
+      class_option :bulma, type: :boolean, desc: 'Use Bulma with Formish'
+
+      class_option :foundation, type: :boolean, desc: 'Use Foundation with Formish'
 
       def info
         return if options.bootstrap
